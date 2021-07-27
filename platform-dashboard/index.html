@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            background-color: #ECE9F2;
+        }
+        
+        .item {
+            height: 100px;
+            margin: 5px;
+            background: #f0f0f0;
+            border: 1px solid transparent;
+        }
+        
+        .item span {
+            display: block;
+            padding: 10px;
+            font-size: 18px;
+            color: #fff;
+        }
+        
+        .nu-selection-box {
+            border: 1px dotted #BBB;
+            background: rgba(0, 0, 0, 0.04);
+        }
+        
+        .nu-selected.item {
+            border: 5px solid #fff;
+            box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <title>Barfas IOT platform</title>
+    <!-- Favicons -->
+    <link href="img/favicon.png" rel="icon">
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.1.221/styles/kendo.common.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.1.221/styles/kendo.default.min.css" />
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--external css-->
+    <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./table-buster/tableBuster.css" type="text/css" media="screen" />
+
+    <!-- <script type="text/javascript" src="./table-buster/redips-table-min.js"></script> -->
+    <!-- <script type="text/javascript" src="./table-buster/ table_buster.min.js"></script> -->
+
+    <script type="text/javascript" src="./table-buster/script.js"></script>
+
+    <link rel="stylesheet" href="./table-buster/css/alertify.min.css" />
+    <!-- include a theme -->
+    <link rel="stylesheet" href="./table-buster/css/themes/default.min.css" />
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/784f1a98af.js" crossorigin="anonymous"></script>
+
+
+
+</head>
+
+<body>
+    <section id="container">
+        <!-- **********************************************************************************************************************************************************
+        TOP BAR CONTENT & NOTIFICATIONS
+        *********************************************************************************************************************************************************** -->
+        <!--header start-->
+        <header class="header black-bg">
+
+            <div class="sidebar-toggle-box">
+                <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+            </div>
+            <!--logo start-->
+            <a href="index.html" class="logo"><b>Barfas</b></a>
+            <!--logo end-->
+
+            <button id="notif1" data-toggle="tooltip" data-placement="top" ata-original-title="Tooltip on top" class="btn btn-dark" type="button" value="merge" onclick="tb.merge(...mouseMoveTd);clearStyle('over');">
+                <div class="fa fa-columns tooltips" data-placement="bottom" data-original-title="Birleştir"></div>
+
+            </button>
+            <button id="notif2" data-toggle="tooltip" class="btn btn-dark" type="button" onclick="tb.merge(...mouseMoveTd);changeStyle();">
+                <div class="fa fa-clone tooltips" data-placement="bottom" data-original-title="Grupla"></div>
+            </button>
+            <!-- <button id="notif3" data-toggle="tooltip" class="btn btn-dark" type="button" onclick="redips.split('v')">
+                <div class="fa fa-arrows-alt-h tooltips" data-placement="bottom" data-original-title="Yatay Böl"></div>
+            </button> -->
+            <button id="notif3" data-toggle="tooltip" class="btn btn-dark" type="button" onclick="split()">
+                <div class="fa fa-arrows-alt-h tooltips" data-placement="bottom" data-original-title=" Böl"></div>
+            </button>
+            <!-- <button id="notif4" data-toggle="tooltip" class="btn btn-dark" type="button" onclick="redips.split('h')">
+                <div class="fa fa-arrows-alt-v tooltips" data-placement="bottom" data-original-title="Dikey Böl"></div>
+            </button> -->
+            <button id="notif5" data-toggle="tooltip" class="btn btn-dark" type="button" onclick=" refresh()">
+                <div class="fa fa-redo tooltips" data-placement="bottom" data-original-title="Sıfırla"></div>
+            </button>
+            <div class="nav notify-row" id="top_menu">
+                <!--  notification start -->
+                <ul class="nav top-menu">
+
+                    <!-- notification dropdown start-->
+                    <li id="header_notification_bar" class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle">
+                            <i class="fa fa-bell-o"></i>
+                            <span class="badge bg-warning">4</span>
+                        </a>
+                        <ul class="dropdown-menu extended notification">
+                            <div class="notify-arrow notify-arrow-yellow"></div>
+                            <li>
+                                <p class="yellow">You have 4 new notifications</p>
+                            </li>
+                            <li>
+                                <a>
+                                    <span class="label label-danger"><i class="fa fa-bolt"></i></span> Server Overloaded.
+                                    <span class="small italic">4 mins.</span>
+                                </a>
+                            </li>
+
+
+                        </ul>
+                    </li>
+                    <!-- notification dropdown end -->
+                    <!--  notification end -->
+
+                </ul>
+                <!-- User Account -->
+                <div class="userAccount">
+                    <div class="profile" onclick="userToggle();">
+                        <img src="img/male_user.png" alt="" width="50">
+                    </div>
+                    <div class="accountMenu">
+                        <h3>User</h3>
+                        <ul>
+                            <li><img src="img/user-logo.png" alt=""><a href="#">Notifications</a></li>
+                            <li><img src="img/user-logo.png" alt=""><a href="#">profile</a></li>
+                            <li><img src="img/settings.png" alt=""><a href="#">Settings</a></li>
+                            <li><img src="img/devices.png" alt=""><a href="#">My Devices</a></li>
+                            <li><img src="img/coins.png" alt=""><a href="#">Financial account</a></li>
+                            <li><img src="img/store.png" alt=""><a href="#">Store</a></li>
+                            <li><img src="img/support.png" alt=""><a href="#">Support</a></li>
+                            <li><img src="img/develop.png" alt=""><a href="#">Developer</a></li>
+                            <li><img src="img/logout.png" alt=""><a href="#">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!--header end-->
+        <!-- **********************************************************************************************************************************************************
+        MAIN SIDEBAR MENU
+        *********************************************************************************************************************************************************** -->
+        <!--sidebar start-->
+        <aside>
+            <div id="sidebar" class="nav-collapse ">
+                <!-- sidebar menu start-->
+                <ul class="sidebar-menu" id="nav-accordion">
+                    <li class="sub-menu">
+                        <a class="active">
+                            <i onclick="addMenu()" class="fa fa-plus" href="./platform-dashboard/platform-dashboard/index.html"></i>
+                            <span type="button" id="addMenu">Menu Ekle</span>
+                        </a>
+
+                    </li>
+                    <div id="mn1">
+
+                    </div>
+
+                    </li>
+                </ul>
+                <!-- sidebar menu end-->
+            </div>
+        </aside>
+        <!--sidebar end-->
+        <!-- **********************************************************************************************************************************************************
+        MAIN CONTENT
+        *********************************************************************************************************************************************************** -->
+        <!--main content start-->
+        <section id="main-content">
+            <section class="wrapper">
+                <!-- <div id="row" class="row">
+                    <div class="collapse" id="collapseExample">
+                        <div class="card card-body">
+
+                        </div>
+                    </div>
+                    <div id="myContainer">
+     
+                        <table class="item" id="mainTable">
+                            <tbody>
+                                <tr>
+                                    <th class="item" id="group"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <td class="item"></td>
+                                </tr>
+                                <tr>
+                                    <th class="item" id="group2"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <td class="item"></td>
+                                </tr>
+                                <tr>
+                                    <th class="item" id="group3"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <td class="item"></td>
+                                </tr>
+                                <tr>
+                                    <th class="item" id="group4"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <td class="item"></td>
+                                </tr>
+                                <tr>
+                                    <th class="item" id="group5"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <td class="item"></td>
+                                </tr>
+                                <tr>
+                                    <th class="item" id="group6"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <td class="item"></td>
+                                </tr>
+                                <tr>
+                                    <th class="item" id="group7"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <td class="item"></td>
+                                </tr>
+                                <tr>
+                                    <th class="item" id="group8"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <th class="item"></th>
+                                    <td class="item"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div> -->
+                <table border="1" width="100%" cellpadding="10"></table>
+
+            </section>
+        </section>
+        <!--main content end-->
+        <!--footer start-->
+
+        <!--footer end-->
+    </section>
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="../platform-dashboard/lib/src/jquery.nu-selectable.js"></script>
+
+    <script src="./barfas.js"></script>
+    <script src="./table-buster/alertify.min.js"></script>
+    <!-- <script src="lib/jquery/jquery.min.js"></script> -->
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script class="include" type="text/javascript" src="lib/jquery.dcjqaccordion.2.7.js"></script>
+    <script src="lib/jquery.scrollTo.min.js"></script>
+    <script src="lib/jquery.nicescroll.js"></script>
+    <!--common script for all pages-->
+    <script src="lib/common-scripts.js"></script>
+    <!--script for this page-->
+    <script type="application/javascript">
+    </script>
+
+
+    <script type="text/javascript">
+        function userToggle() {
+            const toggleAccount = document.querySelector('.accountMenu');
+            toggleAccount.classList.toggle('active')
+        }
+
+
+        $(function() {
+
+            var selection = $('#mainTable').nuSelectable({
+                items: '.item',
+                selectionClass: 'nu-selection-box',
+                selectedClass: 'nu-selected',
+
+            });
+
+        });
+
+        $('#noitf2').click(function() {
+            $(".item").css("background", "");
+            $(this).css('background', 'red');
+        });
+    </script>
+
+</body>
+
+</html>
+
+<script>
+    let sMenuCount = 5;
+    let array = [{
+        subMenuId: '0subMenu',
+        subMenuCount: sMenuCount
+    }, {
+        subMenuId: '1subMenu',
+        subMenuCount: 2
+    }, {
+        subMenuId: '2subMenu',
+        subMenuCount: 1
+    }]
+
+    let valu = localStorage.getItem('key')
+
+    createNavMenu(valu);
+    starMenu(array);
+
+    //  localStorage.removeItem('key')
+
+
+    $(document).ready(function() {
+
+        menuNavClickEvent(valu);
+        subMenuClickEvent();
+
+
+    })
+
+
+    // $('#1menuNavSetting').click(function () {
+    //     settingMenu();
+
+    // });
+
+    //  $('#0').click(function () {
+    //      let classname = "fa fa-archive";
+
+    //      changeMenuNavText("#0menuNav","0")
+
+    //  });
+    //  $('#1').click(function () {
+
+    //      changeMenuNavText("#1menuNav","1")
+    //  });
+    // $('#2').click(function () {
+    //     changeMenuNavText("#2menuNav","2")
+    // });
+    // $('#3').click(function () {
+    //     changeMenuNavText("#3menuNav","3")
+    // });
+    // $('#4').click(function () {
+    //     changeMenuNavText("#4menuNav","4")
+    // });
+    // $('#5').click(function () {
+    //     changeMenuNavText("#5menuNav","5")
+    // });
+
+    // $('#0subbMenu').click(function(){
+    //     changeSubMenuText("#0subbMenu")
+    // })
+
+    // let subMenuTextId="#0subMenu1";
+
+    // $('#0subMenu1').click(function(){
+    //     changeSubMenuText(subMenuTextId)
+    // })
+</script>
+
+<script src="./table-buster/table_buster.min.js"></script>
+<script src="./table-buster/table_buster.min.js.map"></script>
+<script>
+    let tb = new TableBuster(document.querySelector('table'));
+
+
+    function split() {
+        tb.split(lastClickTd,
+            function(td, offsetRow, offsetCell) {
+                console.log(offsetRow, offsetCell);
+                return td;
+            }
+        );
+
+    }
+
+    function fillSquare(rowCapacity) {
+        Array.apply(null, {
+            length: rowCapacity
+        }).forEach(() => {
+            tb.addCell().addRow();
+        });
+
+    }
+
+    function clearStyle(className) {
+        document.querySelectorAll('td').forEach((td) => {
+            td.classList.remove(className);
+        });
+    }
+    function changeStyle() {
+       // document.getElementsByClassName("").style = "ovrr";
+        // document.querySelectorAll('td').forEach((td) => {
+        //    td.className = className;
+        // });
+        mouseMoveTd = [null, null];
+        lastClickTd.style.backgroundColor = "LightBlue"
+        lastClickTd.className="ovrr"
+        // if (lastClickTd)
+         //     lastClickTd.style.backgroundColor = "";
+
+      
+        
+    }
+
+    function clearLastChild() {
+        if (lastClickTd)
+            lastClickTd.style.backgroundColor = "";
+        lastClickTd = null;
+    }
+
+    let lastClickTd = null,
+        flagMouseDown = false,
+        mouseMoveTd = [null, null];
+
+    function eventForTest() {
+        tb.dom.addEventListener('click', (event) => {
+            if (event.target.nodeName === 'TD') {
+                mouseMoveTd = [null, null];
+                event.target.style.backgroundColor = "yellow";
+                // if (lastClickTd)
+                //     lastClickTd.style.backgroundColor = "";
+                clearLastChild();
+                lastClickTd = event.target;
+            }
+        }, false);
+
+        tb.dom.addEventListener('mousedown', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            if (event.target.nodeName === 'TD') {
+                flagMouseDown = true;
+                clearStyle('over');
+                mouseMoveTd[0] = event.target;
+                event.target.classList.add('over');
+            }
+        }, false);
+        tb.dom.addEventListener('mouseover', (event) => {
+            if (event.target.nodeName === 'TD') {
+                if (flagMouseDown === true) {
+                    mouseMoveTd[1] = event.target;
+                    let tdRange = tb.findAreaTd(...mouseMoveTd);
+                    clearStyle('over');
+                    tdRange.forEach((td) => {
+                        td.classList.add('over');
+                    });
+                    // clear last child
+                    clearLastChild();
+                }
+            }
+        }, false);
+        tb.dom.addEventListener('mouseup', (event) => {
+            flagMouseDown = false;
+        }, false);
+    }
+
+    fillSquare(8);
+    tb.refresh();
+    eventForTest();
+
+    lastClickTd = document.querySelector('td');
+
+    const tds = document.querySelectorAll('td');
+</script>
