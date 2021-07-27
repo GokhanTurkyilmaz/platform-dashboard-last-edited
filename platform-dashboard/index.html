@@ -91,16 +91,12 @@
             <button id="notif2" data-toggle="tooltip" class="btn btn-dark" type="button" onclick="tb.merge(...mouseMoveTd);changeStyle();">
                 <div class="fa fa-clone tooltips" data-placement="bottom" data-original-title="Grupla"></div>
             </button>
-            <!-- <button id="notif3" data-toggle="tooltip" class="btn btn-dark" type="button" onclick="redips.split('v')">
-                <div class="fa fa-arrows-alt-h tooltips" data-placement="bottom" data-original-title="Yatay Böl"></div>
-            </button> -->
+          
             <button id="notif3" data-toggle="tooltip" class="btn btn-dark" type="button" onclick="split()">
                 <div class="fa fa-arrows-alt-h tooltips" data-placement="bottom" data-original-title=" Böl"></div>
             </button>
-            <!-- <button id="notif4" data-toggle="tooltip" class="btn btn-dark" type="button" onclick="redips.split('h')">
-                <div class="fa fa-arrows-alt-v tooltips" data-placement="bottom" data-original-title="Dikey Böl"></div>
-            </button> -->
-            <button id="notif5" data-toggle="tooltip" class="btn btn-dark" type="button" onclick=" refresh()">
+         
+            <button id="notif5" data-toggle="tooltip" class="btn btn-dark" type="button" onclick=" refreshStyle()">
                 <div class="fa fa-redo tooltips" data-placement="bottom" data-original-title="Sıfırla"></div>
             </button>
             <div class="nav notify-row" id="top_menu">
@@ -338,20 +334,12 @@
         });
     }
     function changeStyle() {
-       // document.getElementsByClassName("").style = "ovrr";
-        // document.querySelectorAll('td').forEach((td) => {
-        //    td.className = className;
-        // });
-        //mouseMoveTd = [null, null];
-        //lastClickTd.style.backgroundColor = "LightBlue"
         lastClickTd.className="ovrr"
-        // if (lastClickTd)
-         //     lastClickTd.style.backgroundColor = "";
-
-      
-        
     }
 
+    function refreshStyle(){
+        lastClickTd.className="over"
+    }
     function clearLastChild() {
         if (lastClickTd)
             lastClickTd.style.backgroundColor = "";
