@@ -1,10 +1,11 @@
 * {
-    margin: 5px;
+    margin: 8px;
     padding: 2px;
 }
 
 td {
-    height: 67px;
+    height: 55px;
+    width: 60px;
 }
 
 td.over {
@@ -27,6 +28,7 @@ table {
 .container {
     display: flex;
     justify-content: space-between;
+    
 }
 
 .buttons {

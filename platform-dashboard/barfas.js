@@ -35,7 +35,8 @@ function changeMenuNavText(id,IconId) {
         "</textarea>" +
         '<select data-show-content="true" id="iconSelect"  class="fa" >' +
         "<option selected>Icon Sec</option>" +
-        +'<option value="fa fa-align-left">&#xf036; fa-align-left</option>' +
+        '<option value="fa fa-cog">&#xf013; fa-fa-cog</option>' +
+        '<option value="fa fa-align-left">&#xf036; fa-align-left</option>' +
         '<option value="fa fa-align-right">&#xf038; fa-align-right</option>' +
         '<option value="fa fa-ambulance">&#xf0f9; fa-ambulance</option>' +
         '<option value="fa fa-anchor">&#xf13d; fa-anchor</option>' +
@@ -123,9 +124,10 @@ function settingMenu() {
   window.showAlert = function () {
     alertify.alert(
       '<div class="row"><div class="col-md6"><div class="card"><div class="card-body">' +
-        '<select data-show-content="true" id="iconSelect" class="fa">' +
-        "<option selected>Icon Sec</option>" +
-        +'<option value="fa-align-left">&#xf036; fa-align-left</option>' +
+        '<select data-show-content="true" id="iconSelect" style="font-weight: 700; box-sizing: border-box;" class="fa">' +
+        "<option selected>Icon Sec</option>"+
+        '<option value="fa-fa-cog">&#xf013; fa-fa-cog</option>' +
+        '<option value="fa-align-left">&#xf036; fa-align-left</option>' +
         '<option value="fa-align-right">&#xf038; fa-align-right</option>' +
         '<option value="fa-ambulance">&#xf0f9; fa-ambulance</option>' +
         '<option value="fa-anchor">&#xf13d; fa-anchor</option>' +
@@ -183,14 +185,14 @@ function settingMenu() {
         '<option value="fa-exclamation">&#xf12a; fa-exclamation</option>' +
         "</select>" +
         "</div></div>" +
-        '<a class="btn btn-success" href="javascript:showConfirm();">Yeni Menü Ekle</a>' +
+        '<a  href="javascript:showConfirm();">Kaydet</a>' +
         '<a class="btn btn-success" href="javascript:editMenu();">Menü Düzenle</a></div></div>'
     );
     $("#iconSelect").selectpicker();
   };
 
   window.showConfirm = function () {
-    alertify.confirm('<a href="javascript:showAlert();">Kaydet</a>');
+    alertify.confirm('<div class="row"><a href="javascript:showAlert();">Kaydet</a></div>');
   };
   window.editMenu = function () {
     alertify.confirm('<a href="javascript:showAlert();">Menü Düzenle</a>');
