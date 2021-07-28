@@ -2,36 +2,7 @@
 <html lang="en">
 
 <head>
-    <!-- <style>
-        body {
-            background-color: #ECE9F2;
-        }
-
-        .item {
-            height: 100px;
-            margin: 5px;
-            background: #f0f0f0;
-            border: 1px solid transparent;
-        }
-
-        .item span {
-            display: block;
-            padding: 10px;
-            font-size: 18px;
-            color: #fff;
-        }
-
-        .nu-selection-box {
-            border: 1px dotted #BBB;
-            background: rgba(0, 0, 0, 0.04);
-        }
-
-        .nu-selected.item {
-            border: 5px solid #fff;
-            box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
-        }
-    </style> -->
-
+   
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -52,7 +23,7 @@
     <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!--external css-->
     <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    
+
     <link rel="stylesheet" href="./table-buster/tableBuster.css" type="text/css" media="screen" />
 
     <!-- <script type="text/javascript" src="./table-buster/redips-table-min.js"></script> -->
@@ -103,7 +74,7 @@
 
             <button id="notif5" data-toggle="tooltip" class="btn btn-dark" type="button" onclick=" refreshStyle()">
                 <div class="fa fa-redo tooltips" data-placement="bottom" data-original-title="Sıfırla"></div>
-            </button>                
+            </button>
 
             <div class="nav notify-row" id="top_menu">
                 <!--  notification start -->
@@ -190,121 +161,27 @@
         <!--main content start-->
         <section id="main-content">
             <section class="wrapper">
-                         <!-- Modal -->
-                         <div  class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-                         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                         <div class="modal-dialog modal-dialog-centered" role="document">
-                             <div class="modal-content">
-                                 <div class="modal-header">
-                                     <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                         <span aria-hidden="true">&times;</span>
-                                     </button>
-                                 </div>
-                                 <div class="modal-body">
-                                     ...
-                                 </div>
-                                 <div class="modal-footer">
-                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                     <button type="button" class="btn btn-primary">Save changes</button>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                <!-- <div id="row" class="row">
-                    <div class="collapse" id="collapseExample">
-                        <div class="card card-body">
-
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" id="saveCanvas" class="btn btn-primary">Save changes</button>
+                            </div>
                         </div>
                     </div>
-                    <div id="myContainer">
-     
-                        <table class="item" id="mainTable">
-                            <tbody>
-                                <tr>
-                                    <th class="item" id="group"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <td class="item"></td>
-                                </tr>
-                                <tr>
-                                    <th class="item" id="group2"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <td class="item"></td>
-                                </tr>
-                                <tr>
-                                    <th class="item" id="group3"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <td class="item"></td>
-                                </tr>
-                                <tr>
-                                    <th class="item" id="group4"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <td class="item"></td>
-                                </tr>
-                                <tr>
-                                    <th class="item" id="group5"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <td class="item"></td>
-                                </tr>
-                                <tr>
-                                    <th class="item" id="group6"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <td class="item"></td>
-                                </tr>
-                                <tr>
-                                    <th class="item" id="group7"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <td class="item"></td>
-                                </tr>
-                                <tr>
-                                    <th class="item" id="group8"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <th class="item"></th>
-                                    <td class="item"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div> -->
+                </div>
                 <table border="1" width="100%" cellpadding="10"></table>
 
             </section>
@@ -382,44 +259,6 @@
 
     })
 
-
-    // $('#1menuNavSetting').click(function () {
-    //     settingMenu();
-
-    // });
-
-    //  $('#0').click(function () {
-    //      let classname = "fa fa-archive";
-
-    //      changeMenuNavText("#0menuNav","0")
-
-    //  });
-    //  $('#1').click(function () {
-
-    //      changeMenuNavText("#1menuNav","1")
-    //  });
-    // $('#2').click(function () {
-    //     changeMenuNavText("#2menuNav","2")
-    // });
-    // $('#3').click(function () {
-    //     changeMenuNavText("#3menuNav","3")
-    // });
-    // $('#4').click(function () {
-    //     changeMenuNavText("#4menuNav","4")
-    // });
-    // $('#5').click(function () {
-    //     changeMenuNavText("#5menuNav","5")
-    // });
-
-    // $('#0subbMenu').click(function(){
-    //     changeSubMenuText("#0subbMenu")
-    // })
-
-    // let subMenuTextId="#0subMenu1";
-
-    // $('#0subMenu1').click(function(){
-    //     changeSubMenuText(subMenuTextId)
-    // })
 </script>
 
 <script src="./table-buster/table_buster.min.js"></script>
@@ -475,7 +314,17 @@
         tb.dom.addEventListener('dblclick', (event) => {
             if (event.target.nodeName === 'TD') {
                 $('#exampleModalCenter').modal('show')
-                //alert("You double clicked ")
+                var tdm = event.target
+                tdm.setAttribute("id", "test");
+                let tdHeight = document.getElementById('test').offsetHeight;
+                let tdWidght = document.getElementById('test').offsetWidth;
+                $('#saveCanvas').click(function () {
+                    //document.getElementById('test').innerHTML='<canvasid="myCanvas" width="120" height="45" style="border:1px solid #000000;"></canvas>'
+                    $("#test").append('<canvas class="row" id="myCanvas" width="130" height="50" style="border:1px solid #000000;"></canvas>');
+                    tdWidght.offsetWidth = 20;
+                    console.log("TD Height:" + tdHeight, "" + "TD Widht:" + tdWidght)
+                })
+
             }
         })
 
