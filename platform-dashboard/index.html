@@ -91,11 +91,11 @@
             <button id="notif2" data-toggle="tooltip" class="btn btn-dark" type="button" onclick="tb.merge(...mouseMoveTd);changeStyle();">
                 <div class="fa fa-clone tooltips" data-placement="bottom" data-original-title="Grupla"></div>
             </button>
-          
+
             <button id="notif3" data-toggle="tooltip" class="btn btn-dark" type="button" onclick="split()">
                 <div class="fa fa-arrows-alt-h tooltips" data-placement="bottom" data-original-title=" Böl"></div>
             </button>
-         
+
             <button id="notif5" data-toggle="tooltip" class="btn btn-dark" type="button" onclick=" refreshStyle()">
                 <div class="fa fa-redo tooltips" data-placement="bottom" data-original-title="Sıfırla"></div>
             </button>
@@ -331,13 +331,15 @@
             td.classList.remove(className);
         });
     }
+
     function changeStyle() {
-        lastClickTd.className="ovrr"
+        lastClickTd.className = "ovrr"
     }
 
-    function refreshStyle(){
-        lastClickTd.className="over"
+    function refreshStyle() {
+        lastClickTd.className = "over"
     }
+
     function clearLastChild() {
         if (lastClickTd)
             lastClickTd.style.backgroundColor = "";
