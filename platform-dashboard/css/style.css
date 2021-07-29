@@ -905,3 +905,59 @@ ul.top-menu>li>a:focus {
     margin-top: 15px;
     padding: 3px 5px;
 }
+
+#iconList {
+    margin-left: -20px;
+}
+
+#iconSelect {
+    font-size: 20px;
+    margin-left: 3px;
+}
+
+#lblIcon {
+    color: black;
+}
+
+#lblText {
+    color: black;
+    margin-top: 18px;
+}
+
+#txtInput1 {
+    height: 30px;
+    width: 229px;
+    margin-left: -30px;
+    margin-top: 15px;
+}
+
+#buttonIn {
+    width: 300px;
+    position: relative;
+    margin-top: 15px;
+}
+
+#btnAdd {
+    width: 40px;
+    position: absolute;
+    top: 0;
+    border-radius: 5px;
+    right: 85px;
+    z-index: 2;
+    border: none;
+    top: 0px;
+    height: 30px;
+    cursor: pointer;
+    color: white;
+    background-color: #1e90ff;
+    transform: translateX(2px);
+}
+
+#txtInput2 {
+    margin-left: -30px;
+    padding: 0px;
+    width: 229px;
+    outline: none;
+    height: 30px;
+    border-radius: 5px;
+}

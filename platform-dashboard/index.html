@@ -141,7 +141,7 @@
                         <a class="active">
                             <i onclick="addMenu()" class="fa fa-plus"
                                 href="./platform-dashboard/platform-dashboard/index.html"></i>
-                            <span type="button" id="addMenu" onclick="settingMenu()">Menu Ekle</span>
+                            <span type="button" id="addMenu" onclick="editSideBarMenuItmes()">Menu Ekle</span>
                         </a>
 
                     </li>
@@ -220,6 +220,7 @@
                         </div>
                     </div>
                 </div>
+                <div id="modalDiv"></div>
                 <table border="1" width="100%" cellpadding="10"></table>
 
             </section>
@@ -305,6 +306,9 @@
 
     let tb = new TableBuster(document.querySelector('table'));
 
+    function addSubmenu() {
+        alertify.notify("Successfully added!")
+    }
 
     function split() {
         tb.split(lastClickTd,
