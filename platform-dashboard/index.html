@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-   
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -12,8 +12,7 @@
     <!-- Favicons -->
     <link href="img/favicon.png" rel="icon">
     <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
-    <link rel="stylesheet"
-        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.1.221/styles/kendo.common.min.css" />
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.1.221/styles/kendo.default.min.css" />
 
@@ -58,13 +57,11 @@
             <a href="index.html" class="logo"><b>Barfas</b></a>
             <!--logo end-->
 
-            <button id="notif1" data-toggle="tooltip" data-placement="top" ata-original-title="Tooltip on top"
-                class="btn btn-dark" type="button" value="merge" onclick="tb.merge(...mouseMoveTd);clearStyle('over');">
+            <button id="notif1" data-toggle="tooltip" data-placement="top" ata-original-title="Tooltip on top" class="btn btn-dark" type="button" value="merge" onclick="tb.merge(...mouseMoveTd);clearStyle('over');">
                 <div class="fa fa-columns tooltips" data-placement="bottom" data-original-title="Birleştir"></div>
 
             </button>
-            <button id="notif2" data-toggle="tooltip" class="btn btn-dark" type="button"
-                onclick="tb.merge(...mouseMoveTd);changeStyle();">
+            <button id="notif2" data-toggle="tooltip" class="btn btn-dark" type="button" onclick="tb.merge(...mouseMoveTd);changeStyle();">
                 <div class="fa fa-clone tooltips" data-placement="bottom" data-original-title="Grupla"></div>
             </button>
 
@@ -93,8 +90,7 @@
                             </li>
                             <li>
                                 <a>
-                                    <span class="label label-danger"><i class="fa fa-bolt"></i></span> Server
-                                    Overloaded.
+                                    <span class="label label-danger"><i class="fa fa-bolt"></i></span> Server Overloaded.
                                     <span class="small italic">4 mins.</span>
                                 </a>
                             </li>
@@ -139,8 +135,7 @@
                 <ul class="sidebar-menu" id="nav-accordion">
                     <li class="sub-menu">
                         <a class="active">
-                            <i onclick="addMenu()" class="fa fa-plus"
-                                href="./platform-dashboard/platform-dashboard/index.html"></i>
+                            <i onclick="addMenu()" class="fa fa-plus" href="./platform-dashboard/platform-dashboard/index.html"></i>
                             <span type="button" id="addMenu" onclick="settingMenu()">Menu Ekle</span>
                         </a>
 
@@ -162,8 +157,7 @@
         <section id="main-content">
             <section class="wrapper">
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -215,7 +209,7 @@
             toggleAccount.classList.toggle('active')
         }
 
-        $(function () {
+        $(function() {
 
             var selection = $('#mainTable').nuSelectable({
                 items: '.item',
@@ -226,7 +220,7 @@
 
         });
 
-        $('#noitf2').click(function () {
+        $('#noitf2').click(function() {
             $(".item").css("background", "");
             $(this).css('background', 'red');
         });
@@ -238,10 +232,16 @@
 <!-- nav menu setting -->
 <script>
     let sMenuCount = 5;
-    let array = [
-        { subMenuId: '0subMenu', subMenuCount: sMenuCount },
-        { subMenuId: '1subMenu', subMenuCount: 2 },
-        { subMenuId: '2subMenu', subMenuCount: 1 }]
+    let array = [{
+        subMenuId: '0subMenu',
+        subMenuCount: sMenuCount
+    }, {
+        subMenuId: '1subMenu',
+        subMenuCount: 2
+    }, {
+        subMenuId: '2subMenu',
+        subMenuCount: 1
+    }]
 
     let valu = localStorage.getItem('key')
 
@@ -251,14 +251,13 @@
     //  localStorage.removeItem('key')
 
 
-    $(document).ready(function () {
+    $(document).ready(function() {
 
         menuNavClickEvent(valu);
         subMenuClickEvent();
 
 
     })
-
 </script>
 
 <script src="./table-buster/table_buster.min.js"></script>
@@ -269,7 +268,7 @@
 
     function split() {
         tb.split(lastClickTd,
-            function (td, offsetRow, offsetCell) {
+            function(td, offsetRow, offsetCell) {
                 console.log(offsetRow, offsetCell);
                 return td;
             }
@@ -292,6 +291,7 @@
             //td.innerHTML='<i class="fa fa-plus"></i>'
         });
     }
+
     function changeStyle() {
         lastClickTd.className = "ovrr"
     }
@@ -299,6 +299,7 @@
     function refreshStyle() {
         lastClickTd.className = "over"
     }
+
     function clearLastChild() {
         if (lastClickTd)
             lastClickTd.style.backgroundColor = "";
@@ -318,7 +319,7 @@
                 tdm.setAttribute("id", "test");
                 let tdHeight = document.getElementById('test').offsetHeight;
                 let tdWidght = document.getElementById('test').offsetWidth;
-                $('#saveCanvas').click(function () {
+                $('#saveCanvas').click(function() {
                     //document.getElementById('test').innerHTML='<canvasid="myCanvas" width="120" height="45" style="border:1px solid #000000;"></canvas>'
                     $("#test").append('<canvas class="row" id="myCanvas" width="130" height="50" style="border:1px solid #000000;"></canvas>');
                     tdWidght.offsetWidth = 20;
@@ -375,5 +376,4 @@
     lastClickTd = document.querySelector('td');
 
     const tds = document.querySelectorAll('td');
-
 </script>
