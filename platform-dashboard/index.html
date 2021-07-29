@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-   
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -167,13 +167,51 @@
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                <h5 class="modal-title" id="exampleModalLongTitle">Choose Menu Item</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                ...
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <img id="drag-1" src="./img/circuit.png" width="140" height="45">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="circuit.png"
+                                                id="defaultCheck">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img id="drag-2" src="./img/monitoring128px.png" width="140" height="45">
+                                        <div class="form-check">
+                                            <input checked class="form-check-input" type="checkbox"
+                                                value="monitoring128px.png" id="defaultCheck">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img id="drag-3" src="./img/gsmgateway128px.png" width="140" height="45">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="gsmgateway128px.png"
+                                                id="defaultCheck">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img id="drag-3" src="./img/pcb&dizgi128px.png" width="140" height="45">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="pcb&dizgi128px.png"
+                                                id="defaultCheck">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img id="drag-3" src="./img/route.png" width="140" height="45">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="route.png"
+                                                id="defaultCheck">
+                                        </div>
+                                    </div>
+
+
+                                </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -209,7 +247,7 @@
     </script>
 
 
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         function userToggle() {
             const toggleAccount = document.querySelector('.accountMenu');
             toggleAccount.classList.toggle('active')
@@ -230,7 +268,7 @@
             $(".item").css("background", "");
             $(this).css('background', 'red');
         });
-    </script>
+    </script> -->
 
 </body>
 
@@ -264,6 +302,7 @@
 <script src="./table-buster/table_buster.min.js"></script>
 <script src="./table-buster/table_buster.min.js.map"></script>
 <script>
+
     let tb = new TableBuster(document.querySelector('table'));
 
 
@@ -311,19 +350,34 @@
 
     function eventForTest() {
 
+        let chooseId = ["testID1", "testID2", "testID3", "testID4", "testID5", "testID6", "testID7", "testID8", "testID9",
+            "testID10", "testID11", "testID12", "testID13", "testID14", "testID15", "testID16"]
+        let chId = -1;
         tb.dom.addEventListener('dblclick', (event) => {
             if (event.target.nodeName === 'TD') {
+                chId = chId + 1;
                 $('#exampleModalCenter').modal('show')
-                var tdm = event.target
-                tdm.setAttribute("id", "test");
-                let tdHeight = document.getElementById('test').offsetHeight;
-                let tdWidght = document.getElementById('test').offsetWidth;
+                var selectedTableData = event.target
+                console.log()
+                selectedTableData.setAttribute("id", chooseId[chId]);
+
+                //let tdHeight = document.getElementById('test').offsetHeight;
+                //let tdWidght = document.getElementById('test').offsetWidth;
+
+                var p = $(selectedTableData).first();;
+                var position = p.position();
                 $('#saveCanvas').click(function () {
-                    //document.getElementById('test').innerHTML='<canvasid="myCanvas" width="120" height="45" style="border:1px solid #000000;"></canvas>'
-                    $("#test").append('<canvas class="row" id="myCanvas" width="130" height="50" style="border:1px solid #000000;"></canvas>');
-                    tdWidght.offsetWidth = 20;
-                    console.log("TD Height:" + tdHeight, "" + "TD Widht:" + tdWidght)
-                })
+                    let checkedValue = $('.form-check-input:checked').val();
+                    //document.getElementById(chooseId[chId]).innerHTML = '<td class="over"><img id="drag1" src="C:\\Users\\Gökhan\\Desktop\\Barfas\\ElektroentIcon\\Icons\\circuit.png" width="130" height="55"></td>'
+                    document.getElementById(chooseId[chId]).innerHTML = addMenuItemToTable(checkedValue);
+                    //$(chooseId[chId]).append('<img id="drag1" src="C:\\Users\\Gökhan\\Desktop\\Barfas\\ElektroentIcon\\Icons\\circuit.png" width="130" height="55">');
+                    // var positi = $("img").first();
+                    // var itemPosition = positi.position();
+                    // itemPosition.left = position.left;
+                    // itemPosition.top = position.top - 50;
+                    // console.log(itemPosition.left)
+                    // console.log("TD Height:" + tdHeight, "" + "TD Widht:" + tdWidght)
+                });
 
             }
         })
@@ -357,6 +411,7 @@
                     clearStyle('over');
                     tdRange.forEach((td) => {
                         td.classList.add('over');
+
                     });
                     // clear last child
                     clearLastChild();
