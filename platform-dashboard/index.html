@@ -162,7 +162,7 @@
         <section id="main-content">
             <section class="wrapper">
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                <div class="modal fade" id="chooseMenuItemModalCenter" tabindex="-1" role="dialog"
                     aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
@@ -356,7 +356,7 @@
         tb.dom.addEventListener('dblclick', (event) => {
             if (event.target.nodeName === 'TD') {
                 chId = chId + 1;
-                $('#exampleModalCenter').modal('show')
+                $('#chooseMenuItemModalCenter').modal('show')
                 var selectedTableData = event.target
                 console.log()
                 selectedTableData.setAttribute("id", chooseId[chId]);
