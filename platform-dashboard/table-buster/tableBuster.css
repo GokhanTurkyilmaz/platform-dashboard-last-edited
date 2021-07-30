@@ -1,17 +1,31 @@
 *
-td {
-    height: 55px;
-    width: 60px;
+{
+    margin: 0;
+    padding: 0;
 }
+
+#row {
+    margin: 1px;
+}
+
+td {
+
+    height: 55px;
+    width: 70px;
+    position: static;
+
+}
+
 
 td.over {
     background-color: #8fd88f;
+
 }
 
 td.ovrr{
-   
     border: 1px dashed LightBlue;
 }
+
 
 table {
     width: 100%;
@@ -19,6 +33,7 @@ table {
     margin-top: 5px;
     border-collapse: separate;
     border-spacing: 10px;
+    
 }
 
 .container {
@@ -44,3 +59,11 @@ table {
     box-sizing: border-box;
     border: 7px solid #777;
 }
+
+#drag1 {
+    background-color: transparent;
+    border:1px solid #000000;
+    position: inherit;
+    z-index: 2;
+
+  }
