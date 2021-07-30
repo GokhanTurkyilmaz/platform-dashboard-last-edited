@@ -15,30 +15,20 @@
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.1.221/styles/kendo.common.min.css" />
     <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2018.1.221/styles/kendo.default.min.css" />
-
-
-
     <!-- Bootstrap core CSS -->
     <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!--external css-->
     <link href="lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
-
     <link rel="stylesheet" href="./table-buster/tableBuster.css" type="text/css" media="screen" />
-
     <!-- <script type="text/javascript" src="./table-buster/redips-table-min.js"></script> -->
     <!-- <script type="text/javascript" src="./table-buster/ table_buster.min.js"></script> -->
-
     <script type="text/javascript" src="./table-buster/script.js"></script>
-
     <link rel="stylesheet" href="./table-buster/css/alertify.min.css" />
     <!-- include a theme -->
     <link rel="stylesheet" href="./table-buster/css/themes/default.min.css" />
-
     <!-- Custom styles for this template -->
     <link href="css/style.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/784f1a98af.js" crossorigin="anonymous"></script>
-
-
 
 </head>
 
@@ -49,7 +39,6 @@
         *********************************************************************************************************************************************************** -->
         <!--header start-->
         <header class="header black-bg">
-
             <div class="sidebar-toggle-box">
                 <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
             </div>
@@ -94,13 +83,10 @@
                                     <span class="small italic">4 mins.</span>
                                 </a>
                             </li>
-
-
                         </ul>
                     </li>
                     <!-- notification dropdown end -->
                     <!--  notification end -->
-
                 </ul>
                 <!-- User Account -->
                 <div class="userAccount">
@@ -136,14 +122,12 @@
                     <li class="sub-menu">
                         <a class="active">
                             <i onclick="addMenu()" class="fa fa-plus" href="./platform-dashboard/platform-dashboard/index.html"></i>
-                            <span type="button" id="addMenu" onclick="testModal()">Menu Ekle</span>
+                            <span type="button" id="addMenu" onclick="editSideBarMenuItmes()">Menu Ekle</span>
                         </a>
-
                     </li>
                     <div id="mn1">
                         <div></div>
                     </div>
-
                     </li>
                 </ul>
                 <!-- sidebar menu end-->
@@ -156,9 +140,59 @@
         <!--main content start-->
         <section id="main-content">
             <section class="wrapper">
-                <div id="test01"></div>
+                <!-- Modal -->
+                <div class="modal fade" id="chooseMenuItemModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Choose Menu Item</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <img id="drag-1" src="./img/circuit.png" width="140" height="45">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="circuit.png" id="defaultCheck">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img id="drag-2" src="./img/monitoring128px.png" width="140" height="45">
+                                        <div class="form-check">
+                                            <input checked class="form-check-input" type="checkbox" value="monitoring128px.png" id="defaultCheck">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img id="drag-3" src="./img/gsmgateway128px.png" width="140" height="45">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="gsmgateway128px.png" id="defaultCheck">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img id="drag-3" src="./img/pcb&dizgi128px.png" width="140" height="45">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="pcb&dizgi128px.png" id="defaultCheck">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img id="drag-3" src="./img/route.png" width="140" height="45">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="route.png" id="defaultCheck">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" id="saveCanvas" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="modalDiv"></div>
                 <table border="1" width="100%" cellpadding="10"></table>
-
             </section>
         </section>
         <!--main content end-->
@@ -210,12 +244,6 @@
 </body>
 
 </html>
-
-<script type="text/javascript">
-    function addSubmenu() {
-        alertify.notify("Successfully added!")
-    }
-</script>
 <!-- nav menu setting -->
 <script>
     let sMenuCount = 5;
@@ -252,6 +280,9 @@
 <script>
     let tb = new TableBuster(document.querySelector('table'));
 
+    function addSubmenu() {
+        alertify.notify("Successfully added!")
+    }
 
     function split() {
         tb.split(lastClickTd,
@@ -299,19 +330,35 @@
 
     function eventForTest() {
 
+        let chooseId = ["testID1", "testID2", "testID3", "testID4", "testID5", "testID6", "testID7", "testID8", "testID9",
+            "testID10", "testID11", "testID12", "testID13", "testID14", "testID15", "testID16"
+        ]
+        let chId = -1;
         tb.dom.addEventListener('dblclick', (event) => {
             if (event.target.nodeName === 'TD') {
-                // $('#exampleModalCenter').modal('show')
-                var tdm = event.target
-                tdm.setAttribute("id", "test");
-                let tdHeight = document.getElementById('test').offsetHeight;
-                let tdWidght = document.getElementById('test').offsetWidth;
+                chId = chId + 1;
+                $('#chooseMenuItemModalCenter').modal('show')
+                var selectedTableData = event.target
+                console.log()
+                selectedTableData.setAttribute("id", chooseId[chId]);
+
+                //let tdHeight = document.getElementById('test').offsetHeight;
+                //let tdWidght = document.getElementById('test').offsetWidth;
+
+                var p = $(selectedTableData).first();;
+                var position = p.position();
                 $('#saveCanvas').click(function() {
-                    //document.getElementById('test').innerHTML='<canvasid="myCanvas" width="120" height="45" style="border:1px solid #000000;"></canvas>'
-                    $("#test").append('<canvas class="row" id="myCanvas" width="130" height="50" style="border:1px solid #000000;"></canvas>');
-                    tdWidght.offsetWidth = 20;
-                    console.log("TD Height:" + tdHeight, "" + "TD Widht:" + tdWidght)
-                })
+                    let checkedValue = $('.form-check-input:checked').val();
+                    //document.getElementById(chooseId[chId]).innerHTML = '<td class="over"><img id="drag1" src="C:\\Users\\Gökhan\\Desktop\\Barfas\\ElektroentIcon\\Icons\\circuit.png" width="130" height="55"></td>'
+                    document.getElementById(chooseId[chId]).innerHTML = addMenuItemToTable(checkedValue);
+                    //$(chooseId[chId]).append('<img id="drag1" src="C:\\Users\\Gökhan\\Desktop\\Barfas\\ElektroentIcon\\Icons\\circuit.png" width="130" height="55">');
+                    // var positi = $("img").first();
+                    // var itemPosition = positi.position();
+                    // itemPosition.left = position.left;
+                    // itemPosition.top = position.top - 50;
+                    // console.log(itemPosition.left)
+                    // console.log("TD Height:" + tdHeight, "" + "TD Widht:" + tdWidght)
+                });
 
             }
         })

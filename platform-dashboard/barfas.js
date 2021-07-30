@@ -52,7 +52,7 @@ function changeMenuNavText(id,IconId) {
         '<option value="fa fa-arrow-circle-down">&#xf0ab; fa-arrow-circle-down</option>' +
         '<option value="fa fa-arrow-circle-left">&#xf0a8; fa-arrow-circle-left</option>' +
         '<option value="fa fa-arrow-circle-right">&#xf0a9; fa-arrow-circle-right</option>' +
-        ' <option value="fa fa-arrow-circle-up">&#xf0aa; fa-arrow-circle-up</option>' +
+        '<option value="fa fa-arrow-circle-up">&#xf0aa; fa-arrow-circle-up</option>' +
         '<option value="fa fa-arrow-down">&#xf063; fa-arrow-down</option>' +
         '<option value="fa fa-arrow-left">&#xf060; fa-arrow-left</option>' +
         '<option value="fa fa-arrow-right">&#xf061; fa-arrow-right</option>' +
@@ -203,6 +203,7 @@ function settingMenu() {
   window.showAlert();
 }
 
+
 let menuCount = -1;
 let idm = -1;
 function createNavMenu(value) {
@@ -228,6 +229,7 @@ function createNavMenu(value) {
   }
   document.getElementById("mn1").innerHTML = navMenuElement;
 }
+
 
 function createSubMenu(array) {
   let subMenuElement = "";
@@ -272,14 +274,22 @@ function subMenuClickEvent(){
   changeSubMenuText(subMenuTextId)
   }
 }
-function testModal() {
-  $('#exampleModalCenter').modal('show');
-    var z='<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">'+
+
+
+function addMenuItemToTable(menuItemValue){
+  let filePath='./img/'
+  let htmlCode='<td><img id="drag1" src="'+filePath+''+menuItemValue+'" width="80" height="40"></td>'
+  return htmlCode;
+}
+
+function editSideBarMenuItmes() {
+  $('#editSideBarMenuItem').modal('show');
+    var z='<div class="modal fade" id="editSideBarMenuItem" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">'+
     '<div class="modal-dialog modal-dialog-centered" role="document">'+
         '<div class="modal-content">'+
             '<div class="modal-header">'+
                 '<h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>'+
-                '<button type="button" id="btnClose" class="close" data-dismiss="modal" aria-label="Close">'+
+                '<button id="btnClose" type="button" class="close" data-dismiss="modal" aria-label="Close">'+
                     '<span aria-hidden="true">&times;</span>'+
                 '</button> </div>'+
             '<div class="modal-body"><form>'+
@@ -356,5 +366,5 @@ function testModal() {
                 '<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>'+
                 '<button type="button" class="btn btn-primary">Save changes</button>'+
             '</div></div></div></div>';
-  document.getElementById("test01").innerHTML = z;
+  document.getElementById("modalDiv").innerHTML = z;
 }
