@@ -924,7 +924,7 @@ ul.top-menu>li>a:focus {
     margin-top: 18px;
 }
 
-#txtInput1 {
+#txtMenuNavv {
     height: 30px;
     width: 229px;
     margin-left: -30px;
@@ -953,7 +953,7 @@ ul.top-menu>li>a:focus {
     transform: translateX(2px);
 }
 
-#txtInput2 {
+#txtSubMenu {
     margin-left: -30px;
     padding: 0px;
     width: 229px;

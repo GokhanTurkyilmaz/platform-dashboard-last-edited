@@ -123,8 +123,14 @@
                 <ul class="sidebar-menu" id="nav-accordion">
                     <li class="sub-menu">
                         <a class="active">
+<<<<<<< HEAD
                             <i onclick="addMenu()" class="fa fa-plus" href="./platform-dashboard/platform-dashboard/index.html"></i>
                             <span type="button" id="addMenu" onclick="editSideBarMenuItmes()">Menu Ekle</span>
+=======
+                            <i onclick="addMenu()" class="fa fa-plus"
+                                href="./platform-dashboard/platform-dashboard/index.html"></i>
+                            <span  type="button" id="addMenu" >Menu Ekle</span>
+>>>>>>> dbc54adffcb3f6e67e4cdcb86e379870eaf70796
                         </a>
                     </li>
                     <div id="mn1">
@@ -219,6 +225,7 @@
     <script type="application/javascript">
     </script>
 
+<<<<<<< HEAD
 
     <!-- <script type="text/javascript">
         function userToggle() {
@@ -243,11 +250,14 @@
         });
     </script> -->
 
+=======
+>>>>>>> dbc54adffcb3f6e67e4cdcb86e379870eaf70796
 </body>
 
 </html>
 <!-- nav menu setting -->
 <script>
+<<<<<<< HEAD
     let sMenuCount = 5;
     let array = [{
         subMenuId: '0subMenu',
@@ -259,6 +269,12 @@
         subMenuId: '2subMenu',
         subMenuCount: 1
     }]
+=======
+    let array = [
+        { subMenuId: '0subMenu', subMenuCount: 5 },
+        { subMenuId: '1subMenu', subMenuCount: 2 },
+        { subMenuId: '2subMenu', subMenuCount: 1 }]
+>>>>>>> dbc54adffcb3f6e67e4cdcb86e379870eaf70796
 
     let valu = localStorage.getItem('key')
 
@@ -267,7 +283,10 @@
 
     //  localStorage.removeItem('key')
 
+    // double click for open submenu
+     $(document).ready(function () {
 
+<<<<<<< HEAD
     $(document).ready(function() {
 
         menuNavClickEvent(valu);
@@ -275,16 +294,21 @@
 
 
     })
+=======
+         menuNavClickEvent(valu);
+         //subMenuClickEvent();
+     })
+
+>>>>>>> dbc54adffcb3f6e67e4cdcb86e379870eaf70796
 </script>
 
 <script src="./table-buster/table_buster.min.js"></script>
 <script src="./table-buster/table_buster.min.js.map"></script>
 <script>
     let tb = new TableBuster(document.querySelector('table'));
+    
 
-    function addSubmenu() {
-        alertify.notify("Successfully added!")
-    }
+   
 
     function split() {
         tb.split(lastClickTd,
@@ -408,8 +432,9 @@
 
     fillSquare(8);
     tb.refresh();
-    eventForTest();
 
+   
+    eventForTest();
     lastClickTd = document.querySelector('td');
 
     const tds = document.querySelectorAll('td');
