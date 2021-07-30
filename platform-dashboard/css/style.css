@@ -961,3 +961,11 @@ ul.top-menu>li>a:focus {
     height: 30px;
     border-radius: 5px;
 }
+
+.modal-header {
+    height: 50px;
+}
+
+#btnClose {
+    margin-top: -20px;
+}
