@@ -141,7 +141,7 @@
                         <a class="active">
                             <i onclick="addMenu()" class="fa fa-plus"
                                 href="./platform-dashboard/platform-dashboard/index.html"></i>
-                            <span type="button" id="addMenu" onclick="editSideBarMenuItmes()">Menu Ekle</span>
+                            <span  type="button" id="addMenu" >Menu Ekle</span>
                         </a>
 
                     </li>
@@ -247,38 +247,13 @@
     <script type="application/javascript">
     </script>
 
-
-    <!-- <script type="text/javascript">
-        function userToggle() {
-            const toggleAccount = document.querySelector('.accountMenu');
-            toggleAccount.classList.toggle('active')
-        }
-
-        $(function () {
-
-            var selection = $('#mainTable').nuSelectable({
-                items: '.item',
-                selectionClass: 'nu-selection-box',
-                selectedClass: 'nu-selected',
-
-            });
-
-        });
-
-        $('#noitf2').click(function () {
-            $(".item").css("background", "");
-            $(this).css('background', 'red');
-        });
-    </script> -->
-
 </body>
 
 </html>
 <!-- nav menu setting -->
 <script>
-    let sMenuCount = 5;
     let array = [
-        { subMenuId: '0subMenu', subMenuCount: sMenuCount },
+        { subMenuId: '0subMenu', subMenuCount: 5 },
         { subMenuId: '1subMenu', subMenuCount: 2 },
         { subMenuId: '2subMenu', subMenuCount: 1 }]
 
@@ -289,14 +264,12 @@
 
     //  localStorage.removeItem('key')
 
+    // double click for open submenu
+     $(document).ready(function () {
 
-    $(document).ready(function () {
-
-        menuNavClickEvent(valu);
-        subMenuClickEvent();
-
-
-    })
+         menuNavClickEvent(valu);
+         //subMenuClickEvent();
+     })
 
 </script>
 
@@ -305,10 +278,9 @@
 <script>
 
     let tb = new TableBuster(document.querySelector('table'));
+    
 
-    function addSubmenu() {
-        alertify.notify("Successfully added!")
-    }
+   
 
     function split() {
         tb.split(lastClickTd,
@@ -429,8 +401,9 @@
 
     fillSquare(8);
     tb.refresh();
-    eventForTest();
 
+   
+    eventForTest();
     lastClickTd = document.querySelector('td');
 
     const tds = document.querySelectorAll('td');
