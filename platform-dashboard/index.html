@@ -123,14 +123,8 @@
                 <ul class="sidebar-menu" id="nav-accordion">
                     <li class="sub-menu">
                         <a class="active">
-<<<<<<< HEAD
                             <i onclick="addMenu()" class="fa fa-plus" href="./platform-dashboard/platform-dashboard/index.html"></i>
-                            <span type="button" id="addMenu" onclick="editSideBarMenuItmes()">Menu Ekle</span>
-=======
-                            <i onclick="addMenu()" class="fa fa-plus"
-                                href="./platform-dashboard/platform-dashboard/index.html"></i>
-                            <span  type="button" id="addMenu" >Menu Ekle</span>
->>>>>>> dbc54adffcb3f6e67e4cdcb86e379870eaf70796
+                            <span type="button" id="addMenu">Menu Ekle</span>
                         </a>
                     </li>
                     <div id="mn1">
@@ -225,43 +219,14 @@
     <script type="application/javascript">
     </script>
 
-<<<<<<< HEAD
-
-    <!-- <script type="text/javascript">
-        function userToggle() {
-            const toggleAccount = document.querySelector('.accountMenu');
-            toggleAccount.classList.toggle('active')
-        }
-
-        $(function() {
-
-            var selection = $('#mainTable').nuSelectable({
-                items: '.item',
-                selectionClass: 'nu-selection-box',
-                selectedClass: 'nu-selected',
-
-            });
-
-        });
-
-        $('#noitf2').click(function() {
-            $(".item").css("background", "");
-            $(this).css('background', 'red');
-        });
-    </script> -->
-
-=======
->>>>>>> dbc54adffcb3f6e67e4cdcb86e379870eaf70796
 </body>
 
 </html>
 <!-- nav menu setting -->
 <script>
-<<<<<<< HEAD
-    let sMenuCount = 5;
     let array = [{
         subMenuId: '0subMenu',
-        subMenuCount: sMenuCount
+        subMenuCount: 5
     }, {
         subMenuId: '1subMenu',
         subMenuCount: 2
@@ -269,12 +234,6 @@
         subMenuId: '2subMenu',
         subMenuCount: 1
     }]
-=======
-    let array = [
-        { subMenuId: '0subMenu', subMenuCount: 5 },
-        { subMenuId: '1subMenu', subMenuCount: 2 },
-        { subMenuId: '2subMenu', subMenuCount: 1 }]
->>>>>>> dbc54adffcb3f6e67e4cdcb86e379870eaf70796
 
     let valu = localStorage.getItem('key')
 
@@ -284,31 +243,20 @@
     //  localStorage.removeItem('key')
 
     // double click for open submenu
-     $(document).ready(function () {
-
-<<<<<<< HEAD
     $(document).ready(function() {
 
         menuNavClickEvent(valu);
-        subMenuClickEvent();
-
-
+        //subMenuClickEvent();
     })
-=======
-         menuNavClickEvent(valu);
-         //subMenuClickEvent();
-     })
-
->>>>>>> dbc54adffcb3f6e67e4cdcb86e379870eaf70796
 </script>
 
 <script src="./table-buster/table_buster.min.js"></script>
 <script src="./table-buster/table_buster.min.js.map"></script>
 <script>
     let tb = new TableBuster(document.querySelector('table'));
-    
 
-   
+
+
 
     function split() {
         tb.split(lastClickTd,
@@ -433,7 +381,7 @@
     fillSquare(8);
     tb.refresh();
 
-   
+
     eventForTest();
     lastClickTd = document.querySelector('td');
 
