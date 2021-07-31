@@ -912,22 +912,39 @@ ul.top-menu>li>a:focus {
 
 #iconSelect {
     font-size: 20px;
-    margin-left: 3px;
+    margin-left: 19px;
+    width: 223px;
 }
 
 #lblIcon {
+    position: relative;
+    left: 13px;
+    font-size: 15px;
     color: black;
+    margin-top: 3px;
 }
 
 #lblText {
+    position: relative;
+    left: 43px;
+    font-size: 15px;
     color: black;
     margin-top: 18px;
 }
 
+#lblSubmenu {
+    position: relative;
+    top: 22px;
+    font-size: 15px;
+    color: black;
+    white-space: nowrap;
+}
+
 #txtMenuNavv {
     height: 30px;
-    width: 229px;
-    margin-left: -30px;
+    width: 222px;
+    position: relative;
+    left: -15px;
     margin-top: 15px;
 }
 
@@ -940,12 +957,11 @@ ul.top-menu>li>a:focus {
 #btnAdd {
     width: 40px;
     position: absolute;
-    top: 0;
+    top: 3px;
+    right: 80px;
     border-radius: 5px;
-    right: 85px;
     z-index: 2;
     border: none;
-    top: 0px;
     height: 30px;
     cursor: pointer;
     color: white;
@@ -954,9 +970,11 @@ ul.top-menu>li>a:focus {
 }
 
 #txtSubMenu {
-    margin-left: -30px;
+    position: relative;
+    left: -15px;
+    top: 3px;
     padding: 0px;
-    width: 229px;
+    width: 222px;
     outline: none;
     height: 30px;
     border-radius: 5px;
@@ -968,4 +986,9 @@ ul.top-menu>li>a:focus {
 
 #btnClose {
     margin-top: -20px;
+}
+
+#mdlForSubMenu {
+    margin-top: 20px;
+    font-size: 18px;
 }
