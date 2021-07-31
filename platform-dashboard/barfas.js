@@ -312,11 +312,3 @@ function addSubmenu() {
 
   alertify.notify(subCounter + ":" + "Sub-Menu added!", "success");
 }
-
-function gokhanNotChange(){
-  console.log("sdaz")
-}
-
-function gokhanChange(){
-  alert("srdf")
-}
