@@ -1,3 +1,4 @@
+
 let selectIconList =
   '<select data-show-content="true" id="iconSelect" style="font-weight: 900; box-sizing: border-box;" class="fa  form-select" aria-label="Default select example">' +
   "<option selected>Icon Sec</option>" +
@@ -59,7 +60,7 @@ let selectIconList =
   '<option value="fa-euro">&#xf153; fa-euro</option>' +
   '<option value="fa-exclamation">&#xf12a; fa-exclamation</option>' +
   "</select>";
-let txtMenuNav = "txtMenuNavv";
+
 let menuForm =
   "<form>" +
   '<div class="row mb-3"> <label id="lblIcon" class="col-sm-2 col-form-label">Icon seç:</label>' +
@@ -74,11 +75,6 @@ let menuForm =
   '<input id="btnAdd" class="btn btn-primary" type="button" value="Add" onclick="addSubmenu()">' +
   "</div></div></form>";
 
-let sarray = [
-  { subMenuId: "0subMenu", subMenuCount: 5 },
-  { subMenuId: "1subMenu", subMenuCount: 2 },
-  { subMenuId: "2subMenu", subMenuCount: 1 },
-];
 
 function editSideBarMenuItmesPage() {
   var z =
@@ -243,11 +239,14 @@ function starMenu(array) {
 }
 
 let menuId;
+let menuNavIconId;
 function menuNavClickEvent(menuNavCount) {
   for (let i = 0; i <= menuNavCount; i++) {
+  
     let menuNavId = "#" + i;
     $(menuNavId).click(function () {
       let Idm = "#" + i + "menuNav";
+      menuNavIconId=i;
       //*****double click for open submenu cancel for now***////
       //changeMenuNavText(Idm,i)
       menuId = Idm;
@@ -286,14 +285,16 @@ function sideBarMenuSettings(menuNavId) {
   });
 
   $(document).on("click", "#modalBtnSaveChanges", function () {
+   
     let menuNavChangedText = $("#txtMenuNavv").val();
     //let menuNavChangedText=document.getElementById('txtMenuNavv').value;
     $(menuId).text(menuNavChangedText);
     // $(menuId).val($(menuId).val()+menuNavChangedText);
     //$("#editSideBarMenuItem").modal("hide");
     let selectedIcon = document.getElementById("iconSelect").value;
-    document.getElementById("0").className = "fa " + selectedIcon;
-    document.getElementById("btnClose").click();
+    document.getElementById(menuNavIconId).className = "fa " + selectedIcon;
+    //document.getElementById('btnClose').click();
+    $("#editSideBarMenuItem").modal("hide");
   });
 }
 
