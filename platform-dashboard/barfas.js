@@ -1,3 +1,4 @@
+
 let selectIconList =
   '<select data-show-content="true" id="iconSelect" style="font-weight: 900; box-sizing: border-box;" class="fa  form-select" aria-label="Default select example">' +
   "<option selected>Icon Sec</option>" +
@@ -74,11 +75,6 @@ let menuForm =
   '<input id="btnAdd" class="btn btn-primary" type="button" value="Add" onclick="addSubmenu()">' +
   "</div></div></form>";
 
-let sarray = [
-  { subMenuId: "0subMenu", subMenuCount: 5 },
-  { subMenuId: "1subMenu", subMenuCount: 2 },
-  { subMenuId: "2subMenu", subMenuCount: 1 },
-];
 
 function editSideBarMenuItmesPage() {
   var z =
@@ -243,11 +239,14 @@ function starMenu(array) {
 }
 
 let menuId;
+let menuNavIconId;
 function menuNavClickEvent(menuNavCount) {
   for (let i = 0; i <= menuNavCount; i++) {
+  
     let menuNavId = "#" + i;
     $(menuNavId).click(function () {
       let Idm = "#" + i + "menuNav";
+      menuNavIconId=i;
       //*****double click for open submenu cancel for now***////
       //changeMenuNavText(Idm,i)
       menuId = Idm;
@@ -292,7 +291,7 @@ function sideBarMenuSettings(menuNavId) {
     // $(menuId).val($(menuId).val()+menuNavChangedText);
     //$("#editSideBarMenuItem").modal("hide");
     let selectedIcon = document.getElementById("iconSelect").value;
-    document.getElementById("0").className = "fa " + selectedIcon;
+    document.getElementById(menuNavIconId).className = "fa " + selectedIcon;
     document.getElementById("btnClose").click();
   });
 }
@@ -313,10 +312,3 @@ function addSubmenu() {
   alertify.notify(subCounter + ":" + "Sub-Menu added!", "success");
 }
 
-function gokhanNotChange(){
-  console.log("sdaz")
-}
-
-function gokhanChange(){
-  alert("srdf")
-}
