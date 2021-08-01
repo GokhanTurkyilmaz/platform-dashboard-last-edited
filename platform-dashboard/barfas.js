@@ -60,7 +60,7 @@ let selectIconList =
   '<option value="fa-euro">&#xf153; fa-euro</option>' +
   '<option value="fa-exclamation">&#xf12a; fa-exclamation</option>' +
   "</select>";
-let txtMenuNav = "txtMenuNavv";
+
 let menuForm =
   "<form>" +
   '<div class="row mb-3"> <label id="lblIcon" class="col-sm-2 col-form-label">Icon seç:</label>' +
@@ -285,6 +285,7 @@ function sideBarMenuSettings(menuNavId) {
   });
 
   $(document).on("click", "#modalBtnSaveChanges", function () {
+   
     let menuNavChangedText = $("#txtMenuNavv").val();
     //let menuNavChangedText=document.getElementById('txtMenuNavv').value;
     $(menuId).text(menuNavChangedText);
@@ -292,7 +293,8 @@ function sideBarMenuSettings(menuNavId) {
     //$("#editSideBarMenuItem").modal("hide");
     let selectedIcon = document.getElementById("iconSelect").value;
     document.getElementById(menuNavIconId).className = "fa " + selectedIcon;
-    document.getElementById("btnClose").click();
+    //document.getElementById('btnClose').click();
+    $("#editSideBarMenuItem").modal("hide");
   });
 }
 
