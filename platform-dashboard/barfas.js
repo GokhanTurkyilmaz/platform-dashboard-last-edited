@@ -69,7 +69,7 @@ let menuForm =
   "</div></div></div></div></div></div>" +
   '<div class="row mb-3"><label id="lblText" class="col-sm-2 col-form-label">Text:</label>' +
   '<div class="col-sm-10"><input type="text" class="form-control" id="txtMenuNavv"></div></div>' +
-  '<div class="row mb-3"><label id="lblText" class="col-sm-2 col-form-label">Sub-menu:</label>' +
+  '<div class="row mb-3"><label id="lblSubmenu" class="col-sm-2 col-form-label">Sub-menu:</label>' +
   '<div id="buttonIn" class="col-sm-10">' +
   '<input type="text" class="form-control" id="txtSubMenu">' +
   '<input id="btnAdd" class="btn btn-primary" type="button" value="Add" onclick="addSubmenu()">' +
@@ -316,4 +316,3 @@ function addSubmenu() {
 
   alertify.notify(subCounter + ":" + "Sub-Menu added!", "success");
 }
-
