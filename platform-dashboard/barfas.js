@@ -200,7 +200,7 @@ function createNavMenu(value) {
       "<span  id=" +
       i +
       "menuNav" +
-      " type='button'>Menu-nav</span></a>" +
+      " type='button'>Menu-nav <br> </span><i id="+i+'iconSetting'+" class='fa fa-pen'></i></a>" +
       "<ul id=" +
       i +
       "subMenu" +
@@ -240,17 +240,20 @@ function starMenu(array) {
 
 let menuId;
 let menuNavIconId;
+let menuNavSettingIconId;
 function menuNavClickEvent(menuNavCount) {
   for (let i = 0; i <= menuNavCount; i++) {
   
     let menuNavId = "#" + i;
-    $(menuNavId).click(function () {
+    menuNavSettingIconId='#'+i+'iconSetting'
+    $(menuNavSettingIconId).click(function () {
       let Idm = "#" + i + "menuNav";
       menuNavIconId=i;
+      menuNavSettingIconId='#'+i+'iconSetting'
       //*****double click for open submenu cancel for now***////
       //changeMenuNavText(Idm,i)
       menuId = Idm;
-      sideBarMenuSettings(menuNavId);
+      sideBarMenuSettings(menuNavSettingIconId);
     });
   }
 }
