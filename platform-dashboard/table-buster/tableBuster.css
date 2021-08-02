@@ -1,5 +1,4 @@
-*
-{
+* {
     margin: 0;
     padding: 0;
 }
@@ -9,23 +8,19 @@
 }
 
 td {
-
     height: 55px;
     width: 70px;
     position: initial;
    
 }
 
-
 td.over {
     background-color: #8fd88f;
-
 }
 
-td.ovrr{
+td.ovrr {
     border: 1px dashed LightBlue;
 }
-
 
 table {
     width: 100%;
@@ -33,13 +28,11 @@ table {
     margin-top: 5px;
     border-collapse: separate;
     border-spacing: 10px;
-    
 }
 
 .container {
     display: flex;
     justify-content: space-between;
-    
 }
 
 .buttons {
@@ -62,8 +55,7 @@ table {
 
 #drag1 {
     background-color: transparent;
-    border:1px solid #000000;
+    border: 1px solid #000000;
     position: inherit;
     z-index: 2;
-
-  }
+}
