@@ -7,7 +7,7 @@
 body {
     color: #797979;
     background: #eaeaea;
-    font-family: 'Ruda', sans-serif;
+    font-family: 'Saira';
     padding: 0px !important;
     margin: 0px !important;
     font-size: 13px;
@@ -183,7 +183,7 @@ ul.sidebar-menu li ul.sub li:last-child {
 }
 
 ul.sidebar-menu li ul.sub li a {
-    font-size: 12px;
+    font-size: 18px;
     padding: 6px 0;
     line-height: 35px;
     height: 35px;
@@ -230,7 +230,7 @@ ul.sidebar-menu li a {
     text-decoration: none;
     display: block;
     padding: 15px 0 15px 10px;
-    font-size: 12px;
+    font-size: 18px;
     outline: none;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
@@ -908,12 +908,16 @@ ul.top-menu>li>a:focus {
 
 #iconList {
     margin-left: -20px;
+    align-items: center;
 }
 
 #iconSelect {
-    font-size: 20px;
+    color: #000;
+    font-size: 16px;
     margin-left: 19px;
+    margin-top: 3px;
     width: 223px;
+    height: 30px;
 }
 
 #lblIcon {
@@ -921,15 +925,15 @@ ul.top-menu>li>a:focus {
     left: 13px;
     font-size: 15px;
     color: black;
-    margin-top: 3px;
+    margin-top: 7px;
 }
 
 #lblText {
     position: relative;
-    left: 43px;
+    left: 38px;
     font-size: 15px;
     color: black;
-    margin-top: 18px;
+    margin-top: 22px;
 }
 
 #lblSubmenu {
@@ -945,7 +949,7 @@ ul.top-menu>li>a:focus {
     width: 222px;
     position: relative;
     left: -15px;
-    margin-top: 15px;
+    margin-top: 18px;
 }
 
 #buttonIn {
@@ -989,6 +993,24 @@ ul.top-menu>li>a:focus {
 }
 
 #mdlForSubMenu {
+    margin-left: 86px;
     margin-top: 20px;
+    font-family: 'Saira';
     font-size: 18px;
+    font-weight: 800;
+}
+
+.btnNavMenu {
+    display: block;
+    box-sizing: border-box;
+    margin-left: 10px;
+    padding: 8px;
+    font-size: 10px;
+    background: transparent;
+    border-radius: 8px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-out;
 }
