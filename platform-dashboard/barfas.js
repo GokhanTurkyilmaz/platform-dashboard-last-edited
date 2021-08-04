@@ -148,7 +148,6 @@ function changeMenuNavText(id, IconId) {
 
       document.getElementById(IconId).className = x;
 
-      //window.alert(x);
     });
 
     $("#subMenuPlus").click(function () {
@@ -182,6 +181,7 @@ function settingMenu() {
   alertify.confirm().setting("modal", false);
   window.showAlert();
 }
+
 
 let menuCount = -1;
 let idm = -1;
@@ -313,6 +313,6 @@ function addSubmenu() {
       subText +
       "</a></li>"
   );
-
+  
   alertify.notify(subCounter + ":" + "Sub-Menu added!", "success");
 }
