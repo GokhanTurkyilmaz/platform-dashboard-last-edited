@@ -200,7 +200,7 @@ function createNavMenu(value) {
       "<span  id=" +
       i +
       "menuNav" +
-      " type='button'>Menu-nav <br> </span><i id="+i+'iconSetting'+" class='fa fa-pen'></i></a>" +
+      " type='button'>Menu-nav <br> </span><button clas id="+i+'iconSetting'+" class='fa fa-pen btnNavMenu'></button></a>" +
       "<ul id=" +
       i +
       "subMenu" +
@@ -217,7 +217,7 @@ function createSubMenu(array) {
   for (let i = 0; i <= array.subMenuCount; i++) {
     subMenuElement =
       subMenuElement +
-      " <li><a><i  class='fa fa-cog'></i><b id=" +
+      " <li><a><b id=" +
       array.subMenuId +
       i +
       ">Sub-Menu</b></a></li>";
@@ -307,7 +307,7 @@ function addSubmenu() {
   subCounter = subCounter + 1;
   subText = $("#txtSubMenu").val();
   $("#mdlForSubMenu").append(
-    ' <li><a><i class="fa fa-cog"></i><b id=' +
+    ' <li><a><b id=' +
       subCounter +
       "></b>" +
       subText +
